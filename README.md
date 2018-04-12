@@ -9,7 +9,7 @@ It depends on:
 # Usage
 Run the published image locally using the `./start_notebooks.sh` script
 or manually via the following docker cmd
-`docker run -it --rm --name python_notebook -p 8888:8888 -v $(pwd)/data:/home/jovyan zooniverse/panoptes-python-notebook`
+`docker run -it --rm --env-file ./env.list --name python_notebook -p 8888:8888 -v $(pwd)/data:/home/jovyan zooniverse/panoptes-python-notebook`
 
 The container will run and inform you how to access the local notebook server, e.g.
 ```
