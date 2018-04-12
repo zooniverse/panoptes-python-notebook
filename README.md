@@ -1,6 +1,6 @@
-# Python notebook with the Panoptes python client
+# Python notebooks with the Panoptes python client
 
-This repo contains a Docker file to build single user jupyter hub notebooks with the panoptes python client pre-installed.
+Single user jupyter notebooks with the panoptes python client pre-installed for the Zooniverse.
 
 It depends on:
 + https://hub.docker.com/r/jupyterhub/singleuser/
