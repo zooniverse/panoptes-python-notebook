@@ -7,6 +7,9 @@ It depends on:
 + https://github.com/zooniverse/panoptes-python-client
 
 # Usage
+If you are using the python client to interact with the Zooniverse API, you will need to copy the env.list.example file and add your own username and password to the `env.list` file.
++ `cp env.list.example env.list`
+
 Run the published image locally using the `./start_notebooks.sh` script
 or manually via the following docker cmd
 `docker run -it --rm --env-file ./env.list --name python_notebook -p 8888:8888 -v $(pwd)/data:/home/jovyan zooniverse/panoptes-python-notebook`
