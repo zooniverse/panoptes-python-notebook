@@ -23,7 +23,7 @@ docker run -it --rm --env-file ./env.list --name python_notebook -p 8888:8888 -v
 Or with Docker Compose:
 
 ```
-docker-compose run notebook
+docker-compose run --service-ports notebook
 ```
 
 The container will run and inform you how to access the local notebook server, e.g.
@@ -42,4 +42,4 @@ The container will run and inform you how to access the local notebook server, e
 
 # Manually build docker image
 + `docker build -t panoptes-python-notebook .`
-+ `docker-compose build notebook-dev && docker-compose run notebook-dev`
++ `docker-compose build notebook-dev && docker-compose run --service-ports notebook-dev`
