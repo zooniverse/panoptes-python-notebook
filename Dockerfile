@@ -1,5 +1,9 @@
-FROM jupyterhub/singleuser
+FROM jupyter/scipy-notebook
 
-RUN pip install panoptes-client
+RUN pip install \
+        bokeh \
+        holoviews \
+        panoptes-client \
+        panoptescli
 
 CMD jupyter notebook --ip='*' --port=8888 --no-browser --allow-root

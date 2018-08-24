@@ -1,18 +1,30 @@
 # Python notebooks with the Panoptes python client
 
-Single user jupyter notebooks with the panoptes python client pre-installed for the Zooniverse.
+Single user Jupyter notebooks with the Panoptes Python client pre-installed for
+the Zooniverse.
 
 It depends on:
-+ https://hub.docker.com/r/jupyterhub/singleuser/
++ https://hub.docker.com/r/jupyter/scipy-notebook/
 + https://github.com/zooniverse/panoptes-python-client
 
 # Usage
-If you are using the python client to interact with the Zooniverse API, you will need to copy the env.list.example file and add your own username and password to the `env.list` file.
+If you are using the python client to interact with the Zooniverse API, you will
+need to copy the env.list.example file and add your own username and password to
+the `env.list` file.
 + `cp env.list.example env.list`
 
-Run the published image locally using the `./start_notebooks.sh` script
-or manually via the following docker cmd
-`docker run -it --rm --env-file ./env.list --name python_notebook -p 8888:8888 -v $(pwd)/data:/home/jovyan zooniverse/panoptes-python-notebook`
+Run the published image locally using the `./start_notebooks.sh` script or
+manually via the following docker cmd:
+
+```
+docker run -it --rm --env-file ./env.list --name python_notebook -p 8888:8888 -v $(pwd)/data:/home/jovyan zooniverse/panoptes-python-notebook
+```
+
+Or with Docker Compose:
+
+```
+docker-compose run notebook
+```
 
 The container will run and inform you how to access the local notebook server, e.g.
 ```
@@ -30,3 +42,4 @@ The container will run and inform you how to access the local notebook server, e
 
 # Manually build docker image
 + `docker build -t panoptes-python-notebook .`
++ `docker-compose build notebook-dev && docker-compose run notebook-dev`

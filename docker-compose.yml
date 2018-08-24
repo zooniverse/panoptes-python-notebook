@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  notebook:
+    image: zooniverse/panoptes-python-notebook
+    volumes:
+      - ${HOME}:${HOME}
+      - ${PWD}:${PWD}
+    working_dir: ${PWD}
+    ports:
+      - "8888:8888"
+
+  notebook-dev:
+    build:
+      context:  ./
+    volumes:
+      - ${HOME}:${HOME}
+      - ${PWD}:${PWD}
+    working_dir: ${PWD}
+    ports:
+      - "8888:8888"
