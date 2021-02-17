@@ -1,8 +1,6 @@
 FROM jupyter/scipy-notebook
 
 RUN pip install \
-        bokeh \
-        holoviews \
         panoptes-client \
         panoptescli \
         panoptes-aggregation
