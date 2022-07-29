@@ -40,6 +40,13 @@ The container will run and inform you how to access the local notebook server, e
         http://localhost:8888/?token=6462e704464da9b8129027558b44cde94f44c03726fb9ba9
 ```
 
-# Manually build docker image
-+ `docker build -t panoptes-python-notebook .`
-+ `docker-compose build notebook-dev && docker-compose run --rm --service-ports notebook-dev`
+# Manually build docker images and run the containers
+
+Via the compose tool
+`docker-compose build notebook-dev`
+
+Then run the notebook
+`docker-compose run --rm --service-ports notebook-dev`
+
+Via direct docker commands
+`docker build -t panoptes-python-notebook .`
