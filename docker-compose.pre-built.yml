@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  notebook:
+    # this image may be very out of date - check!
+    image: zooniverse/panoptes-python-notebook
+    volumes:
+      - ${HOME}:${HOME}
+      - ${PWD}:${PWD}
+    working_dir: ${PWD}
+    env_file:
+      - env.list
+    ports:
+      - "8888:8888"
