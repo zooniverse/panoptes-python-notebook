@@ -1,9 +1,9 @@
 version: '2'
 
 services:
-  notebook-dev:
-    build:
-      context:  ./
+  notebook:
+    # this image may be very out of date - check!
+    image: zooniverse/panoptes-python-notebook
     volumes:
       - ${HOME}:${HOME}
       - ${PWD}:${PWD}
