@@ -1,15 +1,6 @@
 version: '2'
 
 services:
-  # notebook:
-  #   image: zooniverse/panoptes-python-notebook
-  #   volumes:
-  #     - ${HOME}:${HOME}
-  #     - ${PWD}:${PWD}
-  #   working_dir: ${PWD}
-  #   ports:
-  #     - "8888:8888"
-
   notebook-dev:
     build:
       context:  ./
@@ -18,6 +9,6 @@ services:
       - ${PWD}:${PWD}
     working_dir: ${PWD}
     env_file:
-      - env.list
+      - env-zoobot.list
     ports:
       - "8888:8888"
