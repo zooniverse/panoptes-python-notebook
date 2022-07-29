@@ -9,6 +9,6 @@ services:
       - ${PWD}:${PWD}
     working_dir: ${PWD}
     env_file:
-      - env-zoobot.list
+      - env.list
     ports:
       - "8888:8888"
