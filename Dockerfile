@@ -1,22 +1,22 @@
-FROM jupyter/scipy-notebook:2021-12-16
+FROM jupyter/scipy-notebook:python-3.10
 
 USER root
 
 RUN apt-get update && apt-get -y upgrade && \
-    apt-get install --no-install-recommends -y \
-    build-essential && \
+    apt-get install --no-install-recommends -y build-essential python3-dev && \
     apt-get clean
 
 USER jovyan
 
-RUN pip install \
-        panoptes-client \
-        panoptescli \
-        panoptes-aggregation
+RUN conda install hdbscan=0.8.28 \
+ && conda clean -afy
 
 RUN pip install \
-        azure-common \
-        azure-batch \
-        azure-storage-blob
+    azure-batch \
+    azure-common \
+    azure-storage-blob \
+    panoptes-client \
+    panoptescli \
+    panoptes-aggregation
 
 CMD jupyter notebook --ip='0.0.0.0' --port=8888 --no-browser --allow-root
