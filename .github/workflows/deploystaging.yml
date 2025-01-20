@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - master
-      - new-pool # for testing
   workflow_dispatch:
 
 jobs:
